@@ -57,7 +57,7 @@ au FocusLost * :wa
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Quick .vimrc editing
-nnoremap <leader>v V`]
+nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
 
 " Quick escape
 inoremap jj <ESC>
@@ -72,11 +72,15 @@ nnoremap <C-l> <C-w>l
 " NERDTree -- git clone https://github.com/scrooloose/nerdtree.git
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") 
     \ | q | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Yankring -- git clone https://github.com/vim-scripts/YankRing.vim
+nnoremap <silent> <F3> :YRShow<cr>
+inoremap <silent> <F3> <ESC> :YRShow<cr>
 
 " Solarized -- git clone git://github.com/altercation/vim-colors-solarized.git
 syntax enable
@@ -87,3 +91,4 @@ colorscheme solarized
 " Other plugins to install:
 " NERDCommenter -- git clone https://github.com/scrooloose/nerdcommenter.git
 " SnipMate -- git clone https://github.com/msanders/snipmate.vim.git
+
