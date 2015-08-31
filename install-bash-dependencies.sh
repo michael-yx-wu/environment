@@ -9,16 +9,15 @@ elif [ "$(uname)" == "Linux" ]; then
     platform="Linux"
 fi
 
-# Install bash completion
-echo "Installing bash completion"
+echo "Installing bash-completion"
 if [ "$platform" == "OSX" ]; then
-    brew install bash_completion
+    brew install bash-completion
 elif [ "$platform" == "Linux" ]; then
     sudo yum install bash-completion -y
 fi
 
 # Install git completion
-echo "Installing git completion"
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash \
-    -o .git-completion.bash
+echo "Installing git-completion.sh"
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o .git-completion.bash
 mv .git-completion.bash ~/.git-completion.bash
+
