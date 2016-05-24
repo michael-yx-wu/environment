@@ -12,6 +12,9 @@ Plugin 'msanders/snipmate'
 call vundle#end()
 filetype plugin indent on
 
+" Git message formatting
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 set modelines=0
 
 set tabstop=4
