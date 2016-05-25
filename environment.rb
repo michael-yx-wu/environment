@@ -61,7 +61,8 @@ def main
     tracked_files = [
         '.default.bash',
         '.ideavimrc',
-        '.vimrc'
+        '.vimrc',
+        '.vrapperrc'
     ]
 
     options = parse_options
