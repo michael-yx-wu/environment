@@ -51,6 +51,10 @@ fi
 # Navigation
 alias ..='cd ..'
 
+# Set the title of the current tab
+function title {
+    echo -ne "\033]0;$*\007"
+}
+
 # Add current directory to PATH
 export PATH=$PATH:.
-
