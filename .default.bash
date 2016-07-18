@@ -51,6 +51,9 @@ fi
 # Navigation
 alias ..='cd ..'
 
+# Program aliases
+alias vi='vim'
+
 # Set the title of the current tab
 function title {
     echo -ne "\033]0;$*\007"
