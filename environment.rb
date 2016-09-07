@@ -50,16 +50,37 @@ def backup(tracked_files)
     end
 end
 
-def sync(tracked_files)
+def sync(tracked_files, default_profile)
     tracked_files.each do |filename|
         puts "Syncing into home folder: #{filename}"
         `cp #{filename} ~/`
     end
+
+    include_in_bash_profile(default_profile)
+end
+
+def include_in_bash_profile(default_profile)
+    path_to_bash_profile = "#{Dir.home}/.bash_profile"
+    line_to_add = "source ~/#{default_profile}"
+    already_included = false
+    File.readlines(path_to_bash_profile).each do |line|
+        next unless line.strip.eql?(line_to_add)
+        already_included = true
+        break
+    end
+    return if already_included
+
+    puts "Adding '#{line_to_add}' to .bash_profile"
+    open(path_to_bash_profile, 'a') do |f|
+        f.puts line_to_add
+    end
 end
 
 def main
+    default_profile = '.default.bash'
+
     tracked_files = [
-        '.default.bash',
+        default_profile,
         '.ideavimrc',
         '.vimrc',
         '.vrapperrc'
@@ -70,7 +91,7 @@ def main
     if options[:mode] == Mode::BACKUP
         backup(tracked_files)
     else
-        sync(tracked_files)
+        sync(tracked_files, default_profile)
     end
 end
 
