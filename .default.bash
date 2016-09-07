@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Determine OS
-uname=`uname -s`
 platform="unknown"
 if [ "$(uname)" == "Darwin" ]; then
     platform="OSX"
@@ -11,9 +10,11 @@ fi
 
 # Bash prompt
 if [ "$platform" == "OSX" ]; then
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
-        . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+    if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+        # shellcheck source=/dev/null
+        source $(brew --prefix)/etc/bash_completion
+        # shellcheck source=/dev/null
+        source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
         export GIT_PS1_SHOWDIRTYSTATE=1
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
     else
@@ -22,7 +23,8 @@ if [ "$platform" == "OSX" ]; then
     fi
 elif [ "$platform" == "Linux" ]; then
     if [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
+        # shellcheck disable=SC1091
+        source /etc/bash_completion
        export GIT_PS1_SHOWDIRTYSTATE=1
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
     else
@@ -33,7 +35,8 @@ fi
 
 # Git autocomplete
 if [ -f ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
+    # shellcheck source=/dev/null
+    source ~/.git-completion.bash
 fi
 
 # Highlighting
@@ -53,6 +56,17 @@ alias ..='cd ..'
 
 # Program aliases
 alias vi='vim'
+
+# Git aliases
+alias gau='git add -u'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gl='git log'
+alias gp='git push'
+alias gpf='git push --force'
+alias gpn='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias grl='git reflog'
+alias gs='git status'
 
 # Set the title of the current tab
 function title {
