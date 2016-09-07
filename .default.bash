@@ -31,6 +31,8 @@ elif [ "$platform" == "Linux" ]; then
         echo "Warn: bash_completion not found"
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;34m\]> \[\033[00m\]'
     fi
+else
+    echo 'Unknown platform: not customizing bash prompt'
 fi
 
 # Git autocomplete
@@ -48,7 +50,7 @@ elif [ "$platform" == "Linux" ]; then
     export LS_COLORS="Exfxcxdxbxegedabagacad"
     alias ls="ls --color=auto"
 else
-    echo "Warn: unknown platform - not setting alias for ls"
+    echo "Unknown platform: not setting alias for ls"
 fi
 
 # Navigation
