@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 # Determine OS
-platform="unknown"
-if [ "$(uname)" == "Darwin" ]; then
+platform='unknown'
+if [ "$(uname)" == 'Darwin' ]; then
     platform="OSX"
-elif [ "$(uname)" == "Linux" ]; then
+elif [ "$(uname)" == 'Linux' ]; then
     platform="Linux"
 fi
 
 # Bash prompt
-if [ "$platform" == "OSX" ]; then
+if [ "$platform" == 'OSX' ]; then
     if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
         # shellcheck source=/dev/null
         source $(brew --prefix)/etc/bash_completion
@@ -18,17 +18,17 @@ if [ "$platform" == "OSX" ]; then
         export GIT_PS1_SHOWDIRTYSTATE=1
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
     else
-        echo "Warn: bash_completion not found"
+        echo 'Warn: bash_completion not found'
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;34m\]> \[\033[00m\]'
     fi
-elif [ "$platform" == "Linux" ]; then
+elif [ "$platform" == 'Linux' ]; then
     if [ -f /etc/bash_completion ]; then
         # shellcheck disable=SC1091
         source /etc/bash_completion
        export GIT_PS1_SHOWDIRTYSTATE=1
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
     else
-        echo "Warn: bash_completion not found"
+        echo 'Warn: bash_completion not found'
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;34m\]> \[\033[00m\]'
     fi
 else
@@ -43,14 +43,14 @@ fi
 
 # Highlighting
 export GREP_OPTIONS='--color=auto'
-if [ "$platform" == "OSX" ]; then
+if [ "$platform" == 'OSX' ]; then
     export LSCOLORS="Exfxcxdxbxegedabagacad"
     alias ls="ls -G"
-elif [ "$platform" == "Linux" ]; then
+elif [ "$platform" == 'Linux' ]; then
     export LS_COLORS="Exfxcxdxbxegedabagacad"
     alias ls="ls --color=auto"
 else
-    echo "Unknown platform: not setting alias for ls"
+    echo 'Unknown platform: not setting alias for ls'
 fi
 
 # Navigation
