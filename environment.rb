@@ -101,6 +101,7 @@ def main
     tracked_files = [
         default_profile,
         '.ideavimrc',
+        '.inputrc',
         '.vimrc',
         '.vrapperrc'
     ]
