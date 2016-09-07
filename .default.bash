@@ -60,6 +60,7 @@ alias ..='cd ..'
 alias vi='vim'
 
 # Git aliases
+alias gaa='git add --all'
 alias gau='git add -u'
 alias gc='git commit'
 alias gca='git commit --amend'
