@@ -83,15 +83,15 @@ end
 
 def run_with_message(command, message: nil, show_output: false)
     puts message if message
-    output = `#{command}`
+    output = `#{command} 2>&1`
     puts output if show_output
-    abort("Aborting: '#{command}' exited with nonzero exit code") unless $CHILD_STATUS.exitstatus.zero?
 end
 
 # rubocop:disable Metrics/LineLength
 def install
     run_with_message('git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim', message: 'Installing Vundle...')
-    run_with_message('vim +PluginInstall +qall', message: 'Installing Vim plugins...')
+    run_with_message('vim +PluginInstall +qall', message: 'Installing Vim plugins...') if $CHILD_STATUS.exitstatus.zero?
+    run_with_message('./install_bash_dependencies.sh', message: 'Intalling Bash dependencies...')
 end
 # rubocop:enable Metrics/LineLength
 
