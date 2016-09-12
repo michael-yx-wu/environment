@@ -56,6 +56,8 @@ def backup(tracked_files)
 end
 
 def sync(tracked_files, default_profile)
+    generate_vim_files
+
     tracked_files.each do |filename|
         puts "Syncing into home folder: #{filename}"
         `cp #{filename} ~/`
@@ -63,6 +65,13 @@ def sync(tracked_files, default_profile)
 
     include_in_bash_profile(default_profile)
 end
+
+# rubocop:disable Metrics/LineLength
+def generate_vim_files
+    run_with_message('cat .vimrc > .ideavimrc && cat vim-templates/.ideavimrc_template >> .ideavimrc', message: 'Generating .ideavimrc...')
+    run_with_message('cat .vimrc > .vrapperrc && cat vim-templates/.vrapperrc_template >> .vrapperrc', message: 'Generating .vrapperrc...')
+end
+# rubocop:enable Metrics/LineLength
 
 def include_in_bash_profile(default_profile)
     path_to_bash_profile = "#{Dir.home}/.bash_profile"
