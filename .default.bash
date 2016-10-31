@@ -8,7 +8,18 @@ elif [ "$(uname)" == 'Linux' ]; then
     platform="Linux"
 fi
 
-# Bash prompt
+# PATH
+export PATH=$PATH:.
+
+###### History
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=100000
+export HISTFILESIZE="$HISTSIZE"
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+
+
+# PS1 and GIT_PS1 customization
 if [ "$platform" == 'OSX' ]; then
     if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
         # shellcheck source=/dev/null
@@ -71,10 +82,7 @@ alias gpn='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 alias grl='git reflog'
 alias gs='git status'
 
-# Set the title of the current tab
+# Utilities
 function title {
     echo -ne "\033]0;$*\007"
 }
-
-# Add current directory to PATH
-export PATH=$PATH:.
