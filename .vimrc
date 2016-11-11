@@ -7,7 +7,6 @@ call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'msanders/snipmate'
 
 call vundle#end()
 filetype plugin indent on
