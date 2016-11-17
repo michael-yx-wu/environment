@@ -31,6 +31,7 @@
     ```
     git clone git@github.com:michael-yx-wu/branch-maid.git
     git clone git@github.com:michael-yx-wu/dockerclean.git
+    git clone git@github.com:michael-yx-wu/git-issues.git
     ```
 
 0. Set up environment
