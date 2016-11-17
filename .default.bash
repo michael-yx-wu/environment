@@ -8,16 +8,26 @@ elif [ "$(uname)" == 'Linux' ]; then
     platform="Linux"
 fi
 
-# PATH
+# rbenv
+eval "$(rbenv init -)"
+
+# pyenv
+alias pyinit='eval "$(pyenv init -)"'
+
+# Java
+JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# Append current directory to path
 export PATH=$PATH:.
 
-###### History
+# History
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE="$HISTSIZE"
 shopt -s histappend
 PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
-
 
 # PS1 and GIT_PS1 customization
 if [ "$platform" == 'OSX' ]; then
@@ -71,18 +81,36 @@ alias ..='cd ..'
 alias vi='vim'
 
 # Git aliases
-alias gaa='git add --all'
+alias ga='git add'
+alias gaa='git add -A'
 alias gau='git add -u'
+alias gb='git branch'
+alias gba='git branch -a'
 alias gc='git commit'
 alias gca='git commit --amend'
-alias gl='git log'
+alias gcd='git checkout develop'
 alias gp='git push'
-alias gpf='git push --force'
+alias gpf='git push -f'
 alias gpn='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias gl='git log'
 alias grl='git reflog'
 alias gs='git status'
+alias gt='git tree'
+alias gtl='git tag --sort=v:refname'
+alias sync-tags='git tag | xargs -n1 git tag -d && git fetch --tags'
+
+# Docker aliases
+alias dclean='/Users/michaelwu/code/dockerclean/dockerclean'
+alias dnuke='docker kill $(docker ps -aq); docker rm -fv $(docker ps -aq)'
+
+# Gradle aliases
+alias gw='./gradlew'
 
 # Utilities
 function title {
     echo -ne "\033]0;$*\007"
 }
+
+# iTerm2 shell integration
+# shellcheck source=/dev/null
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
