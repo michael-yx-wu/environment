@@ -1,0 +1,15 @@
+[alias]
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[user]
+	name = Michael Wu
+	email = michaelwu@palantir.com
+[core]
+	editor = vim
+[color]
+	ui = auto
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

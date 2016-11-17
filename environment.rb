@@ -111,6 +111,7 @@ def main
         default_profile,
         '.ideavimrc',
         '.inputrc',
+        '.gitconfig',
         '.vimrc',
         '.vrapperrc'
     ]
