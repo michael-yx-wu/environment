@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
 
-# Determine OS
-platform='unknown'
-if [ "$(uname)" == 'Darwin' ]; then
-    platform='OSX'
-elif [ "$(uname)" == 'Linux' ]; then
-    platform='Linux'
-fi
-
-echo 'Installing bash-completion'
-if [ "$platform" == 'OSX' ]; then
-    brew install bash-completion
-elif [ "$platform" == 'Linux' ]; then
-    sudo yum install bash-completion -y
-fi
+brew install bash-completion
+curl -L "https://raw.githubusercontent.com/docker/docker/v$(docker version --format '{{.Client.Version}}')/contrib/completion/bash/docker" > /usr/local/etc/bash_completion.d/docker
+curl -L "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose" > /usr/local/etc/bash_completion.d/docker-compose
