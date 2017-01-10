@@ -24,7 +24,7 @@
 0. Install homebrew
 
     - Check homebrew website for latest installation bootstrap instructions
-    - `brew install bash vim rbenv pyenv`
+    - `brew install bash vim rbenv pyenv nodenv`
 
 0. Install scripts
 

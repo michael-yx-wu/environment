@@ -8,10 +8,8 @@ elif [ "$(uname)" == 'Linux' ]; then
     platform="Linux"
 fi
 
-# rbenv
 eval "$(rbenv init -)"
-
-# pyenv
+eval "$(nodenv init -)"
 alias pyinit='eval "$(pyenv init -)"'
 
 # Java
