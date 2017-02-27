@@ -275,11 +275,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>930 614 700 622 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>882 378 796 473 0 0 2560 1440 </string>
+	<string>-1100 237 918 498 -1440 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 6 1434 894 -1440 0 1440 900 </string>
+	<string>-1440 0 1440 900 -1440 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>228 137 810 498 0 0 1440 900 </string>
+	<string>1280 730 1274 710 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>517 69 710 473 0 0 2560 1440 </string>
 	<key>New Bookmarks</key>
@@ -1898,7 +1898,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-11-10T22:54:49Z</date>
+	<date>2017-02-09T01:01:10Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Selection Respects Soft Boundaries</key>
@@ -1941,7 +1941,7 @@
 	<key>UseCompactLabel</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
-	<true/>
+	<false/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -1957,6 +1957,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.12</string>
+	<string>3.0.14</string>
 </dict>
 </plist>
