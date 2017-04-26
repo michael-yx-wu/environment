@@ -200,7 +200,7 @@
 	<key>HotKeyTogglesWindow</key>
 	<true/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
 	<integer>32</integer>
 	<key>HotkeyCode</key>
@@ -271,13 +271,13 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>247 979 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>-920 578 400 129 -1440 0 1440 900 </string>
+	<string>-920 579 400 129 -1440 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>930 614 700 622 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1100 237 918 498 -1440 0 1440 900 </string>
+	<string>526 325 937 465 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 0 1440 900 -1440 0 1440 900 </string>
+	<string>0 989 2560 451 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1280 730 1274 710 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1898,7 +1898,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-02-09T01:01:10Z</date>
+	<date>2017-02-28T16:26:17Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Selection Respects Soft Boundaries</key>
