@@ -116,3 +116,6 @@ function title {
 # iTerm2 shell integration
 # shellcheck source=/dev/null
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Disable bell
+set bell-style off
