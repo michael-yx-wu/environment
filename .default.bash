@@ -108,6 +108,10 @@ alias dnuke='docker kill $(docker ps -aq); docker rm -fv $(docker ps -aq)'
 # Gradle aliases
 alias gw='./gradlew'
 
+# npm aliases
+alias npmlg='npm list -g --depth=0'
+
+
 # Utilities
 function title {
     echo -ne "\033]0;$*\007"
