@@ -37,7 +37,7 @@ if [ "$platform" == 'OSX' ]; then
         # shellcheck source=/dev/null
         source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
         export GIT_PS1_SHOWDIRTYSTATE=1
-        export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
+        export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
     else
         echo 'Warn: bash_completion not found'
         export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[01;34m\]> \[\033[00m\]'
