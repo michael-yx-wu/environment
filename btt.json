@@ -1,0 +1,218 @@
+{
+  "BTTPresetName" : "Custom",
+  "BTTPresetUUID" : "F6408CCE-9679-487F-8E81-4E68E0159BF9",
+  "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "BT.G",
+      "BTTAppName" : "Global",
+      "BTTAppSpecificSettings" : {
+
+      },
+      "BTTTriggers" : [
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 21,
+          "BTTPredefinedActionName" : "Maximize Window",
+          "BTTAdditionalConfiguration" : "524288",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 38,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 96,
+          "BTTPredefinedActionName" : "Maximize Window to Top Half",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 32,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 5,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 92,
+          "BTTPredefinedActionName" : "Resize Window to Top Right Quarter \/ Corner",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 34,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 3,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 95,
+          "BTTPredefinedActionName" : "Maximize Window to Bottom Half",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 46,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 8,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 1002,
+          "BTTTriggerTypeDescription" : "Middle Mouse Button",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 116,
+          "BTTPredefinedActionName" : "Lookup Word Under Cursor",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 174,
+          "BTTPredefinedActionName" : "Resize window to Left Two Thirds",
+          "BTTAdditionalConfiguration" : "524320",
+          "BTTTriggerOnDown" : 0,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 22,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 11
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 93,
+          "BTTPredefinedActionName" : "Resize Window to Bottom Right Quarter \/ Corner",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 43,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 7,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 1004,
+          "BTTTriggerTypeDescription" : "Button 4",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "55,30",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 90,
+          "BTTPredefinedActionName" : "Resize Window to Top Left Quarter \/ Corner",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 16,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 4,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 108,
+          "BTTPredefinedActionName" : "Resize window to Left Third",
+          "BTTAdditionalConfiguration" : "524288",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 26,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 10,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 110,
+          "BTTPredefinedActionName" : "Resize window to Right Third",
+          "BTTAdditionalConfiguration" : "524288",
+          "BTTTriggerOnDown" : 0,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 28,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 12
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 20,
+          "BTTPredefinedActionName" : "Maximize Window Right",
+          "BTTAdditionalConfiguration" : "524288",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 40,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 91,
+          "BTTPredefinedActionName" : "Resize Window to Bottom Left Quarter \/ Corner",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 45,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 6,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 1003,
+          "BTTTriggerTypeDescription" : "Button 3",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "55,33",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 19,
+          "BTTPredefinedActionName" : "Maximize Window Left",
+          "BTTAdditionalConfiguration" : "524288",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 4,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 47,
+          "BTTPredefinedActionName" : "Move Window to Next Monitor",
+          "BTTAdditionalConfiguration" : "1310720",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 13,
+          "BTTShortcutModifierKeys" : 1310720,
+          "BTTOrder" : 9,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 175,
+          "BTTPredefinedActionName" : "Resize window to Right Two Thirds",
+          "BTTAdditionalConfiguration" : "524320",
+          "BTTTriggerOnDown" : 0,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 25,
+          "BTTShortcutModifierKeys" : 524288,
+          "BTTOrder" : 13
+        }
+      ]
+    }
+  ],
+  "BTTPresetSnapAreas" : [
+
+  ]
+}
