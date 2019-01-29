@@ -1,6 +1,6 @@
 {
   "BTTPresetName" : "Custom",
-  "BTTPresetUUID" : "F6408CCE-9679-487F-8E81-4E68E0159BF9",
+  "BTTPresetUUID" : "E597B2D5-29B2-4829-91B3-F62939327103",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "BT.G",
@@ -75,7 +75,7 @@
           "BTTAdditionalConfiguration" : "524320",
           "BTTTriggerOnDown" : 0,
           "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 22,
+          "BTTShortcutKeyCode" : 26,
           "BTTShortcutModifierKeys" : 524288,
           "BTTOrder" : 11
         },
@@ -121,7 +121,7 @@
           "BTTPredefinedActionName" : "Resize window to Left Third",
           "BTTAdditionalConfiguration" : "524288",
           "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 26,
+          "BTTShortcutKeyCode" : 22,
           "BTTShortcutModifierKeys" : 524288,
           "BTTOrder" : 10,
           "BTTIconData" : "",
@@ -129,8 +129,8 @@
         },
         {
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 110,
-          "BTTPredefinedActionName" : "Resize window to Right Third",
+          "BTTPredefinedActionType" : 175,
+          "BTTPredefinedActionName" : "Resize window to Right Two Thirds",
           "BTTAdditionalConfiguration" : "524288",
           "BTTTriggerOnDown" : 0,
           "BTTEnabled" : 1,
@@ -200,9 +200,9 @@
         },
         {
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : 175,
-          "BTTPredefinedActionName" : "Resize window to Right Two Thirds",
-          "BTTAdditionalConfiguration" : "524320",
+          "BTTPredefinedActionType" : 110,
+          "BTTPredefinedActionName" : "Resize window to Right Third",
+          "BTTAdditionalConfiguration" : "524288",
           "BTTTriggerOnDown" : 0,
           "BTTEnabled" : 1,
           "BTTShortcutKeyCode" : 25,
