@@ -20,6 +20,7 @@ NODE_PATH="$(npm prefix -g)/lib/node_modules"
 export NODE_PATH
 
 # Java
+export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # Append current directory to path
