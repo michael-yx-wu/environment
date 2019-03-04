@@ -12,6 +12,9 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 alias pyinit='eval "$(pyenv init -)"'
 
+# Add /usr/local/sbin to PATH for Homebrew
+export PATH="/usr/local/sbin:$PATH"
+
 # Node / NPM
 NODE_PATH="$(npm prefix -g)/lib/node_modules"
 export NODE_PATH
@@ -108,7 +111,6 @@ alias gw='./gradlew'
 
 # npm aliases
 alias npmlg='npm list -g --depth=0'
-
 
 # Utilities
 function title {
