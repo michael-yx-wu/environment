@@ -35,6 +35,7 @@ PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
 # PS1 and GIT_PS1 customization
 if [ "$platform" == 'OSX' ]; then
+    export PROMPT_DIRTRIM=3
     if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
         # shellcheck source=/dev/null
         source $(brew --prefix)/etc/bash_completion
