@@ -51,12 +51,6 @@ else
     echo 'Non-macOS platform: not customizing bash prompt'
 fi
 
-# Git autocomplete
-if [ -f ~/.git-completion.bash ]; then
-    # shellcheck source=/dev/null
-    source ~/.git-completion.bash
-fi
-
 # Highlighting
 export GREP_OPTIONS='--color=auto'
 if [ "$platform" == 'OSX' ]; then
