@@ -8,6 +8,8 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = auto
+[pull]
+	ff = only
 [push]
 	default = simple
 [filter "lfs"]
@@ -15,4 +17,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[hub]
