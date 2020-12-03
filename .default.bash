@@ -93,9 +93,6 @@ alias sync-tags='git tag | xargs -n1 git tag -d && git fetch --tags'
 alias dclean='/Users/michaelwu/code/dockerclean/dockerclean'
 alias dnuke='docker kill $(docker ps -aq); docker rm -fv $(docker ps -aq)'
 
-# Gradle aliases
-alias gw='./gradlew'
-
 # npm aliases
 alias npmlg='npm list -g --depth=0'
 
