@@ -101,6 +101,9 @@ function title {
     echo -ne "\033]0;$*\007"
 }
 
+# Ignore default zsh shell prompt on Mac OS
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # iTerm2 shell integration
 # shellcheck source=/dev/null
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
