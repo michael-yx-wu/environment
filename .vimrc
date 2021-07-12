@@ -68,6 +68,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
 
 " Quick escape
+inoremap kk <ESC>
 inoremap jj <ESC>
 
 " Split panes
