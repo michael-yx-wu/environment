@@ -12,15 +12,13 @@ fi
 # Language version management init
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-eval "$(rbenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+# Not auto-initialized because homebrew historically installed things in weird locations if
+# pyenv was initialized -- worth checking to see if this is still necessary
 alias pyinit='eval "$(pyenv init --path)"'
 if $IS_LINUX; then
     export PATH="$HOME/.nodenv/bin:$PATH"
-    # Not auto-initialized because homebrew historically installed things in weird locations if
-    # pyenv was initialized -- worth checking to see if this is still necessary
-    pyinit
 fi
 eval "$(nodenv init -)"
 
@@ -58,7 +56,8 @@ if $IS_MACOS; then
         echo -e "$WARN_NO_GIT_PROMPT"
         export PS1=$PROMPT_WITHOUT_GIT
     fi
-elif $IS_LINUX; then
+fi
+if $IS_LINUX; then
     if [ -f /etc/bash_completion ]; then
         source /etc/bash_completion
         for BASH_COMPLETION_FILE in /etc/bash_completion.d/* ; do
@@ -129,3 +128,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # iTerm2 shell integration
 # shellcheck source=/dev/null
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Make vscode available via command line
+if [ -d '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' ]; then
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+fi

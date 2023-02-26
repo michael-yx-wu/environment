@@ -7,7 +7,6 @@ require 'pathname'
 module Mode
     BACKUP = 0
     SYNC = 1
-    INSTALL = 2
 end
 
 def parse_options
@@ -19,9 +18,6 @@ def parse_options
         end
         parser.on('-s', '--sync', 'Sync configuration') do
             user_options[:mode] = Mode::SYNC
-        end
-        parser.on('-i', '--install', 'Install environment dependencies') do
-            user_options[:mode] = Mode::INSTALL
         end
     end
 
@@ -96,14 +92,6 @@ def run_with_message(command, message: nil, show_output: false)
     puts output if show_output
 end
 
-# rubocop:disable Metrics/LineLength
-def install
-    run_with_message('git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim', message: 'Installing Vundle...')
-    run_with_message('vim +PluginInstall +qall', message: 'Installing Vim plugins...') if $CHILD_STATUS.exitstatus.zero?
-    run_with_message('./install_bash_dependencies.sh', message: 'Intalling Bash dependencies...')
-end
-# rubocop:enable Metrics/LineLength
-
 def main
     default_profile = '.default.bash'
 
@@ -122,8 +110,6 @@ def main
         backup(tracked_files)
     elsif options[:mode] == Mode::SYNC
         sync(tracked_files, default_profile)
-    elsif options[:mode] == Mode::INSTALL
-        install
     end
 end
 
