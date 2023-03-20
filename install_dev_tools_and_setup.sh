@@ -25,6 +25,9 @@ brew install nodenv
 brew install jenv
 brew install shellcheck
 brew install diff-so-fancy
+brew install gdub
+brew tap homebrew/cask-versions
+brew install corretto17
 
 if ! [ -d "$HOME/.vim/bundle/Vundle.vim" ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
