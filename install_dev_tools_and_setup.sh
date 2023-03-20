@@ -23,9 +23,10 @@ brew install bash-completion
 brew install vim
 brew install nodenv
 brew install jenv
+brew install pyenv
 brew install shellcheck
 brew install diff-so-fancy
-brew install gdub
+brew tap gdubw/gng && brew install gng
 brew tap homebrew/cask-versions
 brew install corretto17
 
