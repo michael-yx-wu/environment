@@ -31,7 +31,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 # Not auto-initialized because homebrew historically installed things in weird locations if
 # pyenv was initialized -- worth checking to see if this is still necessary
-alias pyinit='eval "$(pyenv init --path)"'
+eval "$(pyenv init --path)"
 if $IS_LINUX; then
     export PATH="$HOME/.nodenv/bin:$PATH"
 fi
