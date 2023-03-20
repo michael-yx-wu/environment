@@ -1,35 +1,41 @@
-#!/usr/bin/env bash
-
 # Determine OS
 IS_MACOS=false
+IS_APPLE_SILICON=false
 IS_LINUX=false
 if [ "$(uname)" == 'Darwin' ]; then
     IS_MACOS=true
+    if [ "$(uname -m)" == 'arm64' ]; then
+        IS_APPLE_SILICON=true
+    fi
 elif [ "$(uname)" == 'Linux' ]; then
     IS_LINUX=true
+fi
+
+# Add /usr/local/sbin to PATH for Homebrew
+if $IS_APPLE_SILICON ; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif IS_MACOS; then
+    export PATH="/usr/local/sbin:$PATH"
+fi
+
+BREW_BASH="$(brew --prefix)/bin/bash"
+if [ "$SHELL" == '/bin/bash' ] && [[ -f "$BREW_BASH" ]]; then
+    echo "$BREW_BASH" | sudo tee -a '/etc/shells'
+    chsh -s "$BREW_BASH"
 fi
 
 # Language version management init
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-eval "$(rbenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+# Not auto-initialized because homebrew historically installed things in weird locations if
+# pyenv was initialized -- worth checking to see if this is still necessary
 alias pyinit='eval "$(pyenv init --path)"'
 if $IS_LINUX; then
     export PATH="$HOME/.nodenv/bin:$PATH"
-    # Not auto-initialized because homebrew historically installed things in weird locations if
-    # pyenv was initialized -- worth checking to see if this is still necessary
-    pyinit
 fi
 eval "$(nodenv init -)"
-
-# Add /usr/local/sbin to PATH for Homebrew
-export PATH="/usr/local/sbin:$PATH"
-
-# Node / NPM
-NODE_PATH="$(npm prefix -g)/lib/node_modules"
-export NODE_PATH
 
 # Append current directory to path
 export PATH=$PATH:.
@@ -47,7 +53,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 PROMPT_WITH_GIT='\[\033[01;32m\]\u \[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
 PROMPT_WITHOUT_GIT='\[\033[01;32m\]\u \[\033[01;34m\]\w \[\033[01;34m\]> \[\033[00m\]'
 WARN_NO_GIT_PROMPT='\e[1;33mbash_completion not found: prompt will not include __git_ps1\e[0m'
-if $IS_MACOS; then
+if $IS_MACOS || $IS_APPLE_SILICON; then
     if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
         # shellcheck disable=SC1091
         source "$(brew --prefix)/etc/bash_completion"
@@ -129,3 +135,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # iTerm2 shell integration
 # shellcheck source=/dev/null
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Make vscode available via command line
+if [ -d '/Applications/Visual Studio Code.app/Contents/Resources/app/bin' ]; then
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+fi
