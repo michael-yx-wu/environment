@@ -35,6 +35,6 @@ vim +PluginInstall +qall
 curl -L https://iterm2.com/shell_integration/bash  -o ~/.iterm2_shell_integration.bash
 
 # Keyboard
-efaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false

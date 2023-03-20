@@ -1,12 +1,21 @@
-#!/usr/bin/env bash
-
 # Determine OS
 IS_MACOS=false
+IS_APPLE_SILICON=false
 IS_LINUX=false
 if [ "$(uname)" == 'Darwin' ]; then
     IS_MACOS=true
+    if [ "$(uname -m)" == 'arm64' ]; then
+        IS_APPLE_SILICON=true
+    fi
 elif [ "$(uname)" == 'Linux' ]; then
     IS_LINUX=true
+fi
+
+# Add /usr/local/sbin to PATH for Homebrew
+if $IS_APPLE_SILICON ; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif IS_MACOS; then
+    export PATH="/usr/local/sbin:$PATH"
 fi
 
 # Language version management init
@@ -21,13 +30,6 @@ if $IS_LINUX; then
     export PATH="$HOME/.nodenv/bin:$PATH"
 fi
 eval "$(nodenv init -)"
-
-# Add /usr/local/sbin to PATH for Homebrew
-export PATH="/usr/local/sbin:$PATH"
-
-# Node / NPM
-NODE_PATH="$(npm prefix -g)/lib/node_modules"
-export NODE_PATH
 
 # Append current directory to path
 export PATH=$PATH:.
@@ -45,7 +47,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 PROMPT_WITH_GIT='\[\033[01;32m\]\u \[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1) \[\033[01;34m\]> \[\033[00m\]'
 PROMPT_WITHOUT_GIT='\[\033[01;32m\]\u \[\033[01;34m\]\w \[\033[01;34m\]> \[\033[00m\]'
 WARN_NO_GIT_PROMPT='\e[1;33mbash_completion not found: prompt will not include __git_ps1\e[0m'
-if $IS_MACOS; then
+if $IS_MACOS || $IS_APPLE_SILICON; then
     if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
         # shellcheck disable=SC1091
         source "$(brew --prefix)/etc/bash_completion"
@@ -56,8 +58,7 @@ if $IS_MACOS; then
         echo -e "$WARN_NO_GIT_PROMPT"
         export PS1=$PROMPT_WITHOUT_GIT
     fi
-fi
-if $IS_LINUX; then
+elif $IS_LINUX; then
     if [ -f /etc/bash_completion ]; then
         source /etc/bash_completion
         for BASH_COMPLETION_FILE in /etc/bash_completion.d/* ; do
