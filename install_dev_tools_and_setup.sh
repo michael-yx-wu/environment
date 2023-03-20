@@ -16,6 +16,9 @@ fi
 # TODO: replace with python to reduce tools needed
 ./environment.rb -s
 
+# Silence last login message
+touch ~/.hushlogin
+
 # Install tools
 export HOMEBREW_NO_AUTO_UPDATE=1
 brew install bash
