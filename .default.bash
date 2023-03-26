@@ -36,6 +36,9 @@ if $IS_LINUX; then
     export PATH="$HOME/.nodenv/bin:$PATH"
 fi
 eval "$(nodenv init -)"
+export SWIFTENV_ROOT="$HOME/.swiftenv"
+export PATH="$SWIFTENV_ROOT/bin:$PATH"
+eval "$(swiftenv init -)"
 
 # Append current directory to path
 export PATH=$PATH:.
