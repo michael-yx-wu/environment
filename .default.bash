@@ -29,16 +29,11 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-# Not auto-initialized because homebrew historically installed things in weird locations if
-# pyenv was initialized -- worth checking to see if this is still necessary
 eval "$(pyenv init --path)"
 if $IS_LINUX; then
     export PATH="$HOME/.nodenv/bin:$PATH"
 fi
 eval "$(nodenv init -)"
-export SWIFTENV_ROOT="$HOME/.swiftenv"
-export PATH="$SWIFTENV_ROOT/bin:$PATH"
-eval "$(swiftenv init -)"
 
 # Append current directory to path
 export PATH=$PATH:.
@@ -126,6 +121,9 @@ alias dnuke='docker kill $(docker ps -aq); docker rm -fv $(docker ps -aq)'
 
 # npm aliases
 alias npmlg='npm list -g --depth=0'
+
+# Prioritize system python for lldb which cannot link against non-framework builds
+alias lldb='PATH="/usr/bin:$PATH" lldb'
 
 # Utilities
 function title {

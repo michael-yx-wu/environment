@@ -27,7 +27,6 @@ brew install vim
 brew install nodenv
 brew install jenv
 brew install pyenv
-brew install kylef/formulae/swiftenv
 brew install shellcheck
 brew install diff-so-fancy
 brew tap gdubw/gng && brew install gng
