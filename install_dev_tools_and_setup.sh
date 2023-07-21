@@ -23,6 +23,7 @@ touch ~/.hushlogin
 # Install tools
 export HOMEBREW_NO_AUTO_UPDATE=1
 brew install git
+brew install git-lfs
 brew install bash
 brew install bash-completion
 brew install vim
