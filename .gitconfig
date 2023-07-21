@@ -1,19 +1,21 @@
 [alias]
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
-[user]
-	name = Michael Wu
-	email = michael-yx-wu@users.noreply.github.com
+[color]
+	ui = auto
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
-[color]
-	ui = auto
-[pull]
-	ff = only
-[push]
-	default = simple
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[pull]
+	ff = only
+[push]
+	default = simple
+[user]
+	name = Michael Wu
+	email = michael-yx-wu@users.noreply.github.com

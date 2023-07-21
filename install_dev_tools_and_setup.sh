@@ -14,6 +14,7 @@ fi
 
 # Move dotfiles into place
 # TODO: replace with python to reduce tools needed
+touch ~/.bash_profile
 ./environment.rb -s
 
 # Silence last login message
@@ -21,6 +22,7 @@ touch ~/.hushlogin
 
 # Install tools
 export HOMEBREW_NO_AUTO_UPDATE=1
+brew install git
 brew install bash
 brew install bash-completion
 brew install vim
