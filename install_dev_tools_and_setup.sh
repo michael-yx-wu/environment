@@ -59,7 +59,11 @@ elif [ -x "$(command -v apt-get)" ]; then
     fi
 
     # Install pyenv
-    curl https://pyenv.run
+    if ! [ -d "$HOME/.pyenv" ]; then
+        git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    else
+        git -C ~/.pyenv pull
+    fi
 
     # Install gng
     curl -fsSL https://github.com/gdubw/gng/releases/latest/download/gng-installer.sh | sudo bash
