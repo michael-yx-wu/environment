@@ -18,7 +18,7 @@ elif IS_MACOS; then
     export PATH="/usr/local/sbin:$PATH"
 fi
 
-if $IS_MAC; then
+if $IS_MACOS; then
     BREW_BASH="$(brew --prefix)/bin/bash"
     if [ "$SHELL" == '/bin/bash' ] && [[ -f "$BREW_BASH" ]]; then
         echo "$BREW_BASH" | sudo tee -a '/etc/shells'
