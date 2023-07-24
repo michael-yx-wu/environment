@@ -18,10 +18,12 @@ elif IS_MACOS; then
     export PATH="/usr/local/sbin:$PATH"
 fi
 
-BREW_BASH="$(brew --prefix)/bin/bash"
-if [ "$SHELL" == '/bin/bash' ] && [[ -f "$BREW_BASH" ]]; then
-    echo "$BREW_BASH" | sudo tee -a '/etc/shells'
-    chsh -s "$BREW_BASH"
+if $IS_MAC; then
+    BREW_BASH="$(brew --prefix)/bin/bash"
+    if [ "$SHELL" == '/bin/bash' ] && [[ -f "$BREW_BASH" ]]; then
+        echo "$BREW_BASH" | sudo tee -a '/etc/shells'
+        chsh -s "$BREW_BASH"
+    fi
 fi
 
 # Language version management init
