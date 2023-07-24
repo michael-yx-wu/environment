@@ -66,7 +66,9 @@ elif [ -x "$(command -v apt-get)" ]; then
     fi
 
     # Install gng
-    curl -L https://github.com/gdubw/gng/releases/latest/download/gng-installer.sh | sudo bash
+    curl -L https://github.com/gdubw/gng/releases/latest/download/gng-installer.sh -o gng-installer.sh
+    sudo bash ./gng-installer.sh
+    rm ./gng-installer.sh
 fi
 
 # Install vim plugins
