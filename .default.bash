@@ -14,12 +14,11 @@ fi
 # Add /usr/local/sbin to PATH for Homebrew
 if $IS_APPLE_SILICON ; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-elif IS_MACOS; then
+elif $IS_MACOS; then
     export PATH="/usr/local/sbin:$PATH"
 fi
 
 if $IS_MACOS ; then
-    echo "changing shell"
     BREW_BASH="$(brew --prefix)/bin/bash"
     if [ "$SHELL" == '/bin/bash' ] && [[ -f "$BREW_BASH" ]]; then
         echo "$BREW_BASH" | sudo tee -a '/etc/shells'
