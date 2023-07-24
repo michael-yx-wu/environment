@@ -81,9 +81,11 @@ vim +PluginInstall +qall
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 
 # Keyboard
-defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
-defaults write -g ApplePressAndHoldEnabled -bool false
+if $IS_MACOS; then
+    defaults write -g InitialKeyRepeat -int 10
+    defaults write -g KeyRepeat -int 1
+    defaults write -g ApplePressAndHoldEnabled -bool false
+fi
 
 # Move dotfiles into place
 # TODO: replace with python to reduce tools needed
