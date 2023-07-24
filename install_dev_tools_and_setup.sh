@@ -66,7 +66,7 @@ elif [ -x "$(command -v apt-get)" ]; then
     fi
 
     # Install gng
-    curl -fsSL https://github.com/gdubw/gng/releases/latest/download/gng-installer.sh | sudo bash
+    curl -L https://github.com/gdubw/gng/releases/latest/download/gng-installer.sh | sudo bash
 fi
 
 # Install vim plugins
@@ -76,7 +76,7 @@ fi
 vim +PluginInstall +qall
 
 # Install shell integration
-curl -L https://iterm2.com/shell_integration/bash  -o ~/.iterm2_shell_integration.bash
+curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 
 # Keyboard
 defaults write -g InitialKeyRepeat -int 10
