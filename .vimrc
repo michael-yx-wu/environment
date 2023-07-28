@@ -15,6 +15,7 @@ filetype plugin indent on
 
 " Git message formatting
 autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd ColorScheme * highlight SpellBad cterm=underline
 
 set modelines=0
 
