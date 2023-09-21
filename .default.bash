@@ -31,7 +31,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 if $IS_LINUX; then
     export PATH="$HOME/.nodenv/bin:$PATH"
 fi
