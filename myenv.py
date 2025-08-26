@@ -24,7 +24,6 @@ tracked_files = [
 ]
 
 current_dir = pathlib.Path(__file__).readlink().parent.resolve()
-print(current_dir)
 
 def copy():
     generate_vim_files()
@@ -61,6 +60,7 @@ def save():
 
 
 args = parser.parse_args()
+print(f"Resolved script directory: {current_dir}")
 if args.copy:
     copy()
 elif args.save:

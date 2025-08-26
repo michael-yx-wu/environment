@@ -62,9 +62,9 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 set wrap
-set textwidth=120
+set textwidth=100
 set formatoptions=qrn1
-set colorcolumn=+1
+set colorcolumn=101
 
 " File saving
 nnoremap ; :
@@ -105,7 +105,8 @@ colorscheme solarized
 " Other plugins to install:
 " NERDCommenter -- git clone https://github.com/scrooloose/nerdcommenter.git
 " SnipMate -- git clone https://github.com/msanders/snipmate.vim.git
-" HACKHACK sane selection in IdeaVim
+
+" HACKHACK sane selection in IdeaVim to behave like regular text editors
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
 nmap <S-Left> v<Left>
