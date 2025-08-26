@@ -1,8 +1,0 @@
-Metrics/AbcSize:
-    Enabled: false
-Metrics/LineLength:
-    Max: 120
-Metrics/MethodLength:
-    Enabled: false
-Layout/IndentationWidth:
-    Width: 4
