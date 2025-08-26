@@ -1,4 +1,4 @@
-" HACKHACK sane selection in IdeaVim
+" HACKHACK sane selection in IdeaVim to behave like regular text editors
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
 nmap <S-Left> v<Left>

@@ -80,7 +80,7 @@ vim +PluginInstall +qall
 # Install shell integration
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 
-# Keyboard
+# Keyboard (may require restart to take effect)
 if $IS_MACOS; then
     defaults write -g InitialKeyRepeat -int 10
     defaults write -g KeyRepeat -int 1
@@ -88,9 +88,8 @@ if $IS_MACOS; then
 fi
 
 # Move dotfiles into place
-# TODO: replace with python to reduce tools needed
 touch ~/.bash_profile
-./environment.rb -s
+./myenv.py --copy
 
 # Silence last login message
 touch ~/.hushlogin

@@ -1,5 +1,6 @@
 [alias]
-    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+    tree    = log --graph --decorate --pretty=oneline --abbrev-commit --first-parent
+    diverge = !BRANCH=$(git rev-parse --abbrev-ref HEAD) && git log --graph --decorate --pretty=oneline --abrev-commit $CURRENT develop
 [color]
 	ui = auto
 [core]

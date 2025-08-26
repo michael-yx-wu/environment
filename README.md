@@ -7,8 +7,6 @@
 0. Install 1password
     - Connect to iCloud
 
-0. Install Fliqlo and hot corner bottom left corner to screen saver
-
 0. Create ssh key
 
     - `ssh-keygen -t ed25519`
@@ -24,12 +22,12 @@
 
 0. Install iTerm2
 
-    - Load preferences from this directory
+    - Load preferences from `com.googlecode.iterm2.plist` in this repo
 
 0. Install BetterTouchTool
 
-    - Import license from Google Drive
-    - Import `btt.prefs`
+    - Import license from 1password
+    - Load preferences from `btt.json` in this repo
 
 0. Set hostname
 
