@@ -23,7 +23,10 @@ tracked_files = [
     '.vimrc',
 ]
 
-current_dir = pathlib.Path(__file__).readlink().parent.resolve()
+current_path = pathlib.Path(__file__)
+if current_path.is_symlink():
+    current_path = current_path.readlink()
+current_dir = current_path.parent.resolve()
 
 def copy():
     generate_vim_files()
