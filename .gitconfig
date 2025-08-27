@@ -3,8 +3,6 @@
     diverge = !BRANCH=$(git rev-parse --abbrev-ref HEAD) && git log --graph --decorate --pretty=oneline --abrev-commit $CURRENT develop
 [color]
 	ui = auto
-[commit]
-    gpgsign = true
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -22,4 +20,3 @@
 [user]
 	name = Michael Wu
 	email = michael-yx-wu@users.noreply.github.com
-	signingkey = 58F28A6B85219EA1
