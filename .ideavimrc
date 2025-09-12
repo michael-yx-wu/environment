@@ -62,9 +62,8 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 set wrap
-set textwidth=100
+set textwidth=120
 set formatoptions=qrn1
-set colorcolumn=101
 
 " File saving
 nnoremap ; :
