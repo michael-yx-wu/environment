@@ -5,12 +5,13 @@
 	ui = auto
 [core]
 	editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX -M +Gg
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX -M +Gg
 [interactive]
 	diffFilter = diff-so-fancy --patch
 [pull]
